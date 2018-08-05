@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body>
+
+<div ng-controller="MainCtrl">
+  <label>Which columns should we export?</label>
+  <select ng-model="export_column_type"</select>
+    <option value='all'>All</option>
+    <option value='visible'>Visible</option>
+  </select>
+  <label>Which rows should we export?</label>
+  <select ng-model="export_row_type"</select>
+    <option value='all'>All</option>
+    <option value='visible'>Visible</option>
+    <option value='selected'>Selected</option>
+  </select>
+  <label>What format would you like?</label>
+  <select ng-model="export_format"</select>
+    <option value='csv'>CSV</option>
+    <option value='pdf'>PDF</option>
+  </select>
+  <button ng-click="export()">Export</button>
+  <div class="custom-csv-link-location">
+    <label>Your CSV will show below:</label>
+    <span class="ui-grid-exporter-csv-link">&nbsp</span>
+  </div>
+  
+  <div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter ui-grid-move-columns class="grid"></div>
+</div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>

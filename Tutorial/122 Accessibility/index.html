@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body>
+
+<div role="application" ng-controller="MainCtrl">
+  <h3 id="example_short-dataset-without-virtualization">Short Dataset without Virtualization</h3>
+  <button type="button" name="Set focus button" class="btn btn-default">Set Focus Here</button></br></br>
+  <div id="grid1" ui-grid="smallGrid" class="grid1"></div>
+  </br>
+  <h3 id="example_long-dataset-with-virtualization">Long Dataset with Virtualization</h3>
+  <button type="button" name="Set focus button" class="btn btn-default">Set Focus Here</button></br></br>
+  <div id="grid2" ui-grid="virtualGridOptions" ui-grid-cellnav class="grid2" aria-labelledby="grid2-label"></div>
+  <label id="grid2-label">A large list of people and the companies they work for.</label>
+  <p>
+    The above example only allows the screen reader to read the data that is currently visible.
+    Since the browser has no knowledge about the location of the screen reader cursor the grid
+    never scrolls.
+    The plan for the future is to integrate cell nav with the aria labels so that the screen
+    reader dictates where the user is on the grid.
+  </p>
+  </br>
+  <h3 id="example_long-dataset-with-virtualization-and-pagination">Long Dataset with Virtualization and Pagination</h3>
+  <button type="button" name="Set focus button" class="btn btn-default">Set Focus Here</button></br></br>
+  <div id="grid3" ui-grid="paginationGridOptions" class="grid3" ui-grid-pagination aria-labelledby="grid3-label"></div>
+  <label id="grid3-label">A large list of people and the companies they work for using pagination controls.</label>
+</div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>

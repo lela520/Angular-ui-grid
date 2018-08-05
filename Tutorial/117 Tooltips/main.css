@@ -1,0 +1,6 @@
+.grid {
+  width: 800px;
+  height: 500px;
+}
+.red { color: red;  background-color: yellow !important; }
+.blue { color: blue;  }

@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="../../lib/angular.js"></script>
+    <script src="../../lib/angular-touch.js"></script>
+    <script src="../../lib/angular-animate.js"></script>
+    <script src="../../lib/csv.js"></script>
+    <script src="../../lib/pdfmake.js"></script>
+    <script src="../../lib/vfs_fonts.js"></script>
+    <script src="../../lib/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body>
+
+<div ng-controller="MainCtrl">
+  Try clicking the Add button to add the company column.
+  Try clicking the Remove button to remove the last column.
+  Try clicking the Splice button to insert a column in the middle.
+  <br>
+  <br>
+  <button id="button_add" class="btn" ng-click="add()">Add</button>
+  <button id="button_remove" class="btn" ng-click="remove()">Remove Last</button>
+  <button id="button_splice" class="btn" ng-click="splice()">Splice</button>
+  <button id="button_unsplice" class="btn" ng-click="unsplice()">Remove Middle</button>
+  <button id="button_toggle_visible" class="btn" ng-click="toggleVisible()">Toggle Visible</button>
+  <button id="button_toggle_display_name" class="btn" ng-click="toggleDisplayName()">Toggle Display Name</button>
+  <div id="grid1" ui-grid="gridOptions" class="grid"></div>
+</div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>

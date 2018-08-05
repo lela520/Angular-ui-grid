@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body>
+
+<div ng-controller="MainCtrl">
+  <div class="control-group">
+    <input type="button" class="btn btn-small" ng-click="expandAllRows()" value="Expand All"/>
+    <input type="button" class="btn btn-small" ng-click="collapseAllRows()" value="Collapse All"/>
+  </div>
+  <div ui-grid="gridOptions" ui-grid-pinning ui-grid-expandable class="grid"></div>
+</div>
+Expandable rows works with checkboxes from selection and left pins
+<div ng-controller="SecondCtrl">
+   <div ui-grid="gridOptions" ui-grid-pinning ui-grid-expandable ui-grid-selection class="grid"></div>
+</div>
+Retrieve data for subGrid when expanding
+<div ng-controller="ThirdCtrl">
+   <div ui-grid="gridOptions" ui-grid-expandable class="grid"></div>
+</div>
+Toggle expand subGrid control
+<div ng-controller="FourthCtrl">
+   <div ui-grid="gridOptions" ui-grid-expandable class="grid"></div>
+</div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>

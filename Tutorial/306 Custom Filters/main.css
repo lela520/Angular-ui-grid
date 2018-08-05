@@ -1,0 +1,11 @@
+.grid {
+  width: 1000px;
+  height: 550px;
+}
+.modalGrid {
+  width: 100px;
+  height: 200px;
+}
+.modal-dialog {
+  width: 150px;
+}

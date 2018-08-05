@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="../../lib/angular.js"></script>
+    <script src="../../lib/angular-touch.js"></script>
+    <script src="../../lib/angular-animate.js"></script>
+    <script src="../../lib/csv.js"></script>
+    <script src="../../lib/pdfmake.js"></script>
+    <script src="../../lib/vfs_fonts.js"></script>
+    <script src="../../lib/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body>
+
+<div ng-controller="MainCtrl">
+  Click on a column header to sort by that column. (The third column has sorting disabled.)
+  To demonstrate the live sorting we provide a button that toggles the gender of Alexander Foley.
+  Sort by gender (ASC - so click twice) then name (using shift click), so that Alexander is at the top of the grid,
+  then click the toggleGender button.
+
+  <br>
+  <br>
+  <button id='toggleGender' ng-click='toggleGender()' class="btn btn-success" >Toggle Gender</button>
+  <div id="grid1" ui-grid="gridOptions1" class="grid"></div>
+
+  <br>
+  You can set an initial sort state for the grid by defining the `sort` property on your column definitions.
+  The `direction` sub-property says which way to sort, and the `priority` says what order to sort the columns
+  in (lower priority gets sorted first).
+  <br>
+  <br>
+
+  <div id="grid2" ui-grid="gridOptions2" class="grid"></div>
+</div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>

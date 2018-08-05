@@ -1,0 +1,14 @@
+.grid {
+  width: 1000px;
+  height: 500px;
+}
+
+.header-filtered {
+  color: blue;
+}
+
+.ui-grid-icon-menu:before {
+    font-family: FontAwesome;
+    content: '\f013';
+    font-size: 24px;
+}

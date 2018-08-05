@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body>
+
+<div ng-controller="MainCtrl">
+
+  <p><strong>Grid with native pagination controls</strong></p>
+  <div ui-grid="gridOptions1" ui-grid-pagination class="grid"></div>
+
+  <br /><br />
+
+  <p><strong>Grid pagination controlled via the API</strong></p>
+  <div ui-grid="gridOptions2" ui-grid-pagination class="grid"></div>
+
+  <p>Current page: {{ gridApi2.pagination.getPage() }} of {{ gridApi2.pagination.getTotalPages() }}</p>
+  <button type="button" class="btn btn-success" ng-click="gridApi2.pagination.previousPage()">
+    previous page
+  </button>
+  <button type="button" class="btn btn-success" ng-click="gridApi2.pagination.nextPage()">
+    next page
+  </button>
+  <button type="button" class="btn btn-success" ng-click="gridApi2.pagination.seek(3)">
+    go to page 3
+  </button>
+  
+</div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>

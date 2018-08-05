@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body>
+
+<div ng-controller="MainCtrl">
+  <select ng-model="lang" ng-options="l for l in langs"></select><br>
+
+  <div ui-i18n="{{lang}}">
+     <p>Using attribute:</p>
+     <p ui-t="groupPanel.description"></p>
+     <br/>
+     <p>Using Filter:</p>
+     <p>{{"groupPanel.description" | t}}</p>
+
+     <p>Click the header menu to see language. NOTE: TODO: header text does not change after grid is rendered. </p>
+
+     <div ui-grid="gridOptions" class="grid"></div>
+  </div>
+
+</div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>

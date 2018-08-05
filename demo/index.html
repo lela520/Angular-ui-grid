@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <link rel="stylesheet" href="../lib/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-touch.js"></script>
+    <script src="../lib/angular-animate.js"></script>
+    <script src="../lib/csv.js"></script>
+    <script src="../lib/pdfmake.js"></script>
+    <script src="../lib/vfs_fonts.js"></script>
+    <script src="../lib/ui-grid.js"></script>
+    <script src="../lib/ui-grid.eot"></script>
+    <script src="../lib/ui-grid.svg"></script>
+    <script src="../lib/ui-grid.ttf"></script>
+    <script src="../lib/ui-grid.woff"></script>
+
+  </head>
+  <body>
+
+    <div ng-controller="MainCtrl">
+      <div id="grid1" ui-grid="{ data: myData }" class="grid"></div>
+    </div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>

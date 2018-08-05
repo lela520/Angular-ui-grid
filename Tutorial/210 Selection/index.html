@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body>
+
+<div ng-controller="MainCtrl">
+  <button type="button" class="btn btn-success" ng-click="toggleMultiSelect()">Toggle multiSelect</button>  <strong>MultiSelect:</strong> <span ng-bind="gridApi.grid.options.multiSelect"></span>
+  <button type="button" class="btn btn-success" ng-click="toggleRow1()">Toggle Row 0</button>
+  <br/>
+  <br/>
+  <button type="button" class="btn btn-success" ng-click="toggleModifierKeysToMultiSelect()">Toggle modifierKeysToMultiSelect</button>  <strong>ModifierKeysToMultiSelect:</strong> <span ng-bind="gridApi.grid.options.modifierKeysToMultiSelect"> </span>
+  <br/>
+  <br/>
+  <button type="button" class="btn btn-success" ng-disabled="!gridApi.grid.options.multiSelect" ng-click="selectAll()">Select All</button>
+  <button type="button" class="btn btn-success" ng-click="clearAll()">Clear All</button>
+  <button type="button" class="btn btn-success" ng-click="setSelectable()">Set Selectable</button>
+  <button type="button" class="btn btn-success" ng-click="toggleFullRowSelection()">Toggle full row selection</button>
+  <br/>
+
+  <div id="grid1Selection" ui-grid="gridOptions" ui-grid-selection ui-grid-cellnav class="grid"></div>
+</div>
+<div ng-controller="SecondCtrl">
+  Single selection grid without rowHeader, and allowing rowSelection to be toggled on and off dynamically:
+  <br/>
+  <button type="button" class="btn btn-success" ng-click="toggleRowSelection()">Toggle rowSelection</button>  <strong>rowSelection:</strong> <span ng-bind="gridApi.grid.options.enableRowSelection"></span>
+  <div ui-grid="gridOptions" ui-grid-selection class="grid"></div>
+</div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>

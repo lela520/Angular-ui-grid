@@ -1,0 +1,14 @@
+.grid1 {
+  width: 700px;
+  height: 300px;
+}
+.grid2 {
+  width: 700px;
+  height: 400px;
+}
+.grid3 {
+  width: 700px;
+  height: 430px;
+}
+.red { color: red;  background-color: yellow !important; }
+.blue { color: blue;  }
